@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+echo "Setting up Linux system"
+
+if [ "$SPIN" ]; then
+    sudo apt install -y \
+        bat
+else
+    sudo apt update -y
+    sudo apt install -y \
+        bat \
+        curl \
+        zsh \
+        git
+    sudo apt upgrade -y
+    chsh -s /usr/bin/zsh
+fi
+
+# Install starship
+sudo /bin/sh starship/install.sh -y

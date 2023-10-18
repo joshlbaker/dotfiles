@@ -1,0 +1,33 @@
+[user]
+	email = joshua.baker@shopify.com
+	name = Josh Baker
+
+[core]
+	editor = code --wait
+	ignorecase = false
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	cp = cherry-pick
+	unstage = reset HEAD --
+
+[include]
+	path = /Users/joshbaker/.config/dev/gitconfig
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[rebase]
+	autosquash = true
+
+[init]
+	defaultBranch = main
+
+[sequence]
+	editor = code --wait --reuse-window
