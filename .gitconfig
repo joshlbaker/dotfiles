@@ -6,6 +6,9 @@
 	editor = code --wait
 	ignorecase = false
 
+[commit]
+    	gpgsign = true
+
 [alias]
 	co = checkout
 	br = branch
@@ -13,21 +16,7 @@
 	st = status
 	cp = cherry-pick
 	unstage = reset HEAD --
-
-[include]
-	path = /Users/joshbaker/.config/dev/gitconfig
-
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
-
-[rebase]
-	autosquash = true
-
-[init]
-	defaultBranch = main
+	please = push --force-with-lease
 
 [sequence]
 	editor = code --wait --reuse-window
